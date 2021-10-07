@@ -9,9 +9,9 @@ chrome.runtime.onMessageExternal.addListener(function (
   //     : "from the extension"
   // );
 
-  if (request.greeting == "hello") {
+  if (request.greeting == "hiya") {
     sendResponse({ farewell: "goodbye" });
     const key = "myKey";
-    chrome.storage.sync.set({ key: request.greeting });
+    chrome.storage.sync.set({ [key]: request.greeting });
   }
 });
